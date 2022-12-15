@@ -138,9 +138,23 @@ public class CustomerController {
 		}
 		
 		return "layouts/showCustomerByDni";
+	}
+	
+	/**
+	 * Borra el cliente con el id que recibe por parametros
+	 * 
+	 * @param id
+	 * @return redirige al metodo de la vista de los clientes 
+	 */
+	@PostMapping("deleteCustomer")
+	public String deleteCustomer(@RequestParam String id) {
 		
+		cms.deleteCustomerById(Long.valueOf(id));
+		
+		return "redirect:showCustomers";
 		
 		
 	}
+	
 	
 }

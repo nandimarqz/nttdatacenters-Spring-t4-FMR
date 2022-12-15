@@ -52,6 +52,7 @@
         <th scope="col">Primer Apellido</th>
         <th scope="col">Segundo apellido</th>
         <th scope="col">DNI	</th>
+        <th scope="col">Borrar</th>
       </tr>
     </thead>
     <tbody>
@@ -61,6 +62,7 @@
         <td th:text="${customer.firstSurname}"></td>
         <td th:text="${customer.secondSurname}"></td>
         <td th:text="${customer.dni}"></td>
+        <td><form action="deleteCustomer" method="post"><button type="submit" id="deleteCustomer" name="id" th:value="${customer.id}"class="btn btn-danger">Delete</button></form></td>
       </tr>
     </tbody>
   </table>
